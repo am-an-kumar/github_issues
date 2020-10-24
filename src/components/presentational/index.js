@@ -1,0 +1,6 @@
+export * from './Header'
+export * from './Main'
+export * from './IssuesList'
+export * from './Issue'
+export * from './IssueLabelsList'
+export * from './IssueLabel'
