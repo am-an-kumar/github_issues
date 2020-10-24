@@ -1,0 +1,3 @@
+const SET_REPO_ISSUES = 'SET_REPO_ISSUES'
+
+export { SET_REPO_ISSUES }
