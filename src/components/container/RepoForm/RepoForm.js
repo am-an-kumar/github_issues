@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import classes from './RepoForm.module.scss'
 
 function RepoForm({ fetchRepoData }) {
     const [formState, setFormState] = useState({
@@ -24,7 +25,7 @@ function RepoForm({ fetchRepoData }) {
     const { owner, repo } = formState
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={classes.form}>
             <input
                 type="text"
                 value={owner}

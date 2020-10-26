@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchRepoData } from 'store/actionCreator'
 import { RepoForm, RepoInfo, IssuesList } from 'components'
+import classes from './Main.module.scss'
 
 const MainComponent = memo(function MainComponent({
     fetchRepoData,
@@ -10,7 +11,7 @@ const MainComponent = memo(function MainComponent({
     issues,
 }) {
     return (
-        <main>
+        <main className={classes.main}>
             <RepoForm fetchRepoData={fetchRepoData} />
             <RepoInfo repo={repo} />
             <IssuesList issues={issues} />
