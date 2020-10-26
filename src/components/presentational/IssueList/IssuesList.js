@@ -1,16 +1,19 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { Issue } from 'components'
+import classes from './IssueList.module.scss'
 
 const IssuesList = memo(function IssuesList({ issues }) {
     return issues ? (
-        <ul>
+        <ul className={classes.list}>
             {issues.map(function mapIssues(issue) {
                 return <Issue key={issue.id} issue={issue} />
             })}
         </ul>
     ) : (
-        <p>Enter a valid owner/organization and repo and press "Find Issues"</p>
+        <p className={classes.info}>
+            Enter a valid owner/organization and repo and press "Find Issues"
+        </p>
     )
 })
 

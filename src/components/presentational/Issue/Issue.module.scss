@@ -1,0 +1,50 @@
+.issue {
+    border: 1px solid #ccc;
+    padding: 0.4rem 0.6rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    &:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .info {
+        margin: 0 1rem;
+        flex-grow: 1;
+
+        display: flex;
+        flex-flow: column nowrap;
+
+        .issueInfo {
+            display: flex;
+            flex-flow: row wrap;
+
+            .title {
+                font-family: Rubik, sans-serif;
+                font-weight: 900;
+            }
+        }
+
+        .metaInfo {
+            margin: 0.4rem 0;
+        }
+    }
+
+    .comment {
+        display: flex;
+        align-items: center;
+
+        span {
+            font-size: 1rem;
+            line-height: 4rem;
+            margin-left: 0.4rem;
+        }
+    }
+}
