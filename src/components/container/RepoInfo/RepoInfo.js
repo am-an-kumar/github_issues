@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import classes from './RepoInfo.module.scss'
+import { Avatar } from 'components'
 
 function RepoInfo({ repo }) {
     const [status, setStatus] = useState({
@@ -22,10 +24,12 @@ function RepoInfo({ repo }) {
 
     return (
         repo && (
-            <div>
-                <span>{avatarURL}</span>
-                <span>{fullName}</span>
-                <div>
+            <div className={classes.container}>
+                <div className={classes.info}>
+                    <Avatar url={avatarURL} alt={fullName} />
+                    <span>{fullName}</span>
+                </div>
+                <div className="button">
                     <button
                         style={{
                             backgroundColor: watch ? 'green' : 'grey',
