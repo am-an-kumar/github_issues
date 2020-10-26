@@ -18,4 +18,4 @@ IssueLabelsList.propTypes = {
     labels: PropTypes.array,
 }
 
-export default IssueLabelsList
+export { IssueLabelsList }

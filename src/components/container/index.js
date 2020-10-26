@@ -1,2 +1,2 @@
-export * from './RepoForm'
-export * from './RepoInfo'
+export * from './RepoForm/RepoForm'
+export * from './RepoInfo/RepoInfo'
