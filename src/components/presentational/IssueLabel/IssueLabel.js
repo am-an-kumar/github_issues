@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
+import classes from './IssueLabel.module.scss'
 
 const IssueLabel = memo(function IssueLabel({ name, color }) {
     return (
@@ -7,6 +8,7 @@ const IssueLabel = memo(function IssueLabel({ name, color }) {
             style={{
                 backgroundColor: `#${color}`,
             }}
+            className={classes.label}
         >
             {name}
         </span>
