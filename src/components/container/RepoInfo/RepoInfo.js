@@ -29,24 +29,24 @@ function RepoInfo({ repo }) {
                     <Avatar url={avatarURL} alt={fullName} />
                     <span>{fullName}</span>
                 </div>
-                <div className="button">
+                <div className={classes.buttonsContainer}>
                     <button
                         style={{
-                            backgroundColor: watch ? 'green' : 'grey',
+                            backgroundColor: watch ? '#2c974b' : 'grey',
                         }}
                         onClick={handleStatusChange}
                         data-id={'watch'}
                     >{`Watch ${watch ? watchCount + 1 : watchCount}`}</button>
                     <button
                         style={{
-                            backgroundColor: star ? 'green' : 'grey',
+                            backgroundColor: star ? '#2c974b' : 'grey',
                         }}
                         onClick={handleStatusChange}
                         data-id={'star'}
                     >{`Star ${star ? starCount + 1 : starCount}`}</button>
                     <button
                         style={{
-                            backgroundColor: fork ? 'green' : 'grey',
+                            backgroundColor: fork ? '#2c974b' : 'grey',
                         }}
                         onClick={handleStatusChange}
                         data-id={'fork'}
