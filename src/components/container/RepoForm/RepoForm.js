@@ -28,14 +28,16 @@ function RepoForm({ fetchRepoData }) {
         <form onSubmit={handleSubmit} className={classes.form}>
             <input
                 type="text"
-                value={owner}
                 name="owner"
+                placeholder="Organization/Owner"
+                value={owner}
                 onChange={handleChange}
             />
             <input
                 type="text"
-                value={repo}
                 name="repo"
+                placeholder="Repository"
+                value={repo}
                 onChange={handleChange}
             />
             <button type="submit">Find Issues</button>
