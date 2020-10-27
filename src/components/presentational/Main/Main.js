@@ -9,19 +9,21 @@ const MainComponent = memo(function MainComponent({
     fetchRepoData,
     repo,
     issues,
+    error,
 }) {
     return (
         <main className={classes.main}>
             <RepoForm fetchRepoData={fetchRepoData} />
-            <RepoInfo repo={repo} />
-            <IssuesList issues={issues} />
+            {!error && <RepoInfo repo={repo} />}
+            <IssuesList issues={issues} error={error} />
         </main>
     )
 })
 
 const mapStateToProps = ({ repo, issues }) => ({
     repo,
-    issues,
+    issues: issues.issues,
+    error: issues.error,
 })
 
 const mapDispatchToProps = { fetchRepoData }

@@ -1,6 +1,6 @@
 import { showLoading, hideLoading } from 'react-redux-loading'
 import { fetchRepoDetailsAPI, fetchRepoIssuesAPI } from 'api'
-import { setRepoDetails, setRepoIssues } from 'store/actionCreator'
+import { setRepoDetails, setRepoIssues, setError } from 'store/actionCreator'
 
 function fetchRepoData(owner, repo) {
     return function (dispatch) {
@@ -32,11 +32,12 @@ function fetchRepoData(owner, repo) {
                 dispatch(setRepoIssues(issuesData.data))
             })
             .catch(function handleError() {
-                dispatch(setRepoDetails(null))
-                dispatch(setRepoIssues(null))
+                dispatch(setRepoDetails([]))
+                dispatch(setRepoIssues([]))
+                dispatch(setError(true))
             })
             .finally(function cleanUp() {
-                // hiding the laoding indicator
+                // hiding the loading indicator
                 dispatch(hideLoading())
             })
     }

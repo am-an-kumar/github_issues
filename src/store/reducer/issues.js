@@ -1,9 +1,36 @@
-import { SET_REPO_ISSUES } from 'store/action'
+import { SET_REPO_ISSUES, SET_ERROR } from 'store/action'
 
-function issues(state = null, action) {
-    switch (action.type) {
+const initialState = {
+    issues: [],
+    hasMoreIssues: true,
+    error: false,
+}
+
+function issues(state = initialState, { type, payload }) {
+    switch (type) {
         case SET_REPO_ISSUES:
-            return action.payload
+            const { issues } = payload
+            if (issues.length === 0) {
+                return {
+                    ...state,
+                    issues,
+                    hasMoreIssues: false,
+                    error: false,
+                }
+            } else {
+                return {
+                    ...state,
+                    issues,
+                    error: false,
+                }
+            }
+
+        case SET_ERROR:
+            return {
+                ...state,
+                error: payload.error,
+            }
+
         default:
             return state
     }
